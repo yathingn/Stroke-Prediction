@@ -31,13 +31,13 @@ def result():
                 ,bmi,smoking_status]).reshape(1,-1)
     # now we need to scale down data
 
-    scaler_path=os.path.join(r'C:\Users\prajw\campusx_ml\resume_project_ml','models/scaler.pkl')
+    scaler_path=os.path.join(r'C:\Users\yathi\campusx_ml\resume_project_ml','models/scaler.pkl')
     scaler=None
     with open(scaler_path,'rb') as scaler_file:
         scaler=pickle.load(scaler_file)
 
     x=scaler.transform(x)
-    dummy=os.path.join(r'C:\Users\prajw\campusx_ml\resume_project_ml','models/rf.sav')
+    dummy=os.path.join(r'C:\Users\yathi\campusx_ml\resume_project_ml','models/rf.sav')
     rf=joblib.load(dummy)
     r=rf.predict(x)
 
